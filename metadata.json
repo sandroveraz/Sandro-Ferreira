@@ -1,0 +1,5 @@
+{
+  "name": "Vera",
+  "description": "A professional AI-powered application to create and edit images using text prompts and existing images. Built with React and the Gemini API.",
+  "requestFramePermissions": []
+}
