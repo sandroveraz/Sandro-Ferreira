@@ -6,9 +6,10 @@ interface MobileModalProps {
     editFromModal: () => void;
     newImageFromModal: () => void;
     closeModal: () => void;
+    handleShare: () => void;
 }
 
-const MobileModal: React.FC<MobileModalProps> = ({ generatedImage, editFromModal, newImageFromModal }) => {
+const MobileModal: React.FC<MobileModalProps> = ({ generatedImage, editFromModal, newImageFromModal, handleShare }) => {
     
     const downloadFromModal = () => {
         if (generatedImage) {
@@ -33,6 +34,10 @@ const MobileModal: React.FC<MobileModalProps> = ({ generatedImage, editFromModal
                     <button className="modal-btn download flex flex-col items-center text-gray-300 hover:text-white" onClick={downloadFromModal}>
                         <span className="text-2xl">💾</span>
                         <span className="text-xs mt-1">Salvar</span>
+                    </button>
+                     <button className="modal-btn share flex flex-col items-center text-gray-300 hover:text-white" onClick={handleShare}>
+                        <span className="text-2xl">🔗</span>
+                        <span className="text-xs mt-1">Compartilhar</span>
                     </button>
                     <button className="modal-btn new flex flex-col items-center text-gray-300 hover:text-white" onClick={newImageFromModal}>
                         <span className="text-2xl">✨</span>

@@ -6,9 +6,10 @@ interface RightPanelProps {
     generatedImage: string | null;
     error: string | null;
     editCurrentImage: () => void;
+    handleShare: () => void;
 }
 
-const RightPanel: React.FC<RightPanelProps> = ({ isLoading, generatedImage, error, editCurrentImage }) => {
+const RightPanel: React.FC<RightPanelProps> = ({ isLoading, generatedImage, error, editCurrentImage, handleShare }) => {
 
     const downloadImage = () => {
         if (generatedImage) {
@@ -49,6 +50,7 @@ const RightPanel: React.FC<RightPanelProps> = ({ isLoading, generatedImage, erro
                     <div className="image-actions absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
                         <button className="action-btn bg-gray-800 bg-opacity-70 p-2 rounded-full hover:bg-opacity-100" title="Editar" onClick={editCurrentImage}>✏️</button>
                         <button className="action-btn bg-gray-800 bg-opacity-70 p-2 rounded-full hover:bg-opacity-100" title="Download" onClick={downloadImage}>💾</button>
+                        <button className="action-btn bg-gray-800 bg-opacity-70 p-2 rounded-full hover:bg-opacity-100" title="Compartilhar" onClick={handleShare}>🔗</button>
                     </div>
                 </div>
             )}
